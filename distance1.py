@@ -3,12 +3,16 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def timeCheck(self):
         if (len(self.lineEdit.text())==0) and (len(self.lineEdit_2.text())==0) and (len(self.lineEdit_3.text())==0):
+            komunikat = "Podaj czas"
+            self.label_6.setText(komunikat)
             print("podaj czas")
         else:
             if self.radioButton_6.isChecked():
                 h = self.lineEdit.text()
                 m = self.lineEdit_2.text()
                 s = self.lineEdit_3.text()
+                czas = h+":"+m+":"+s
+                self.label_6.setText(czas)
                 print(h,":",m,":",s)
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -61,14 +65,18 @@ class Ui_MainWindow(object):
         self.lineEdit_3.setGeometry(QtCore.QRect(270, 140, 113, 20))
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(230, 70, 31, 31))
+        self.label_3.setGeometry(QtCore.QRect(220, 70, 50, 31))
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(230, 100, 31, 31))
+        self.label_4.setGeometry(QtCore.QRect(220, 100, 50, 31))
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(230, 130, 31, 31))
+        self.label_5.setGeometry(QtCore.QRect(220, 130, 50, 31))
         self.label_5.setObjectName("label_5")
+        self.label_6 = QtWidgets.QLabel(self.centralwidget)
+        self.label_6.setGeometry(QtCore.QRect(220, 170, 151, 21))
+        self.label_6.setText("")
+        self.label_6.setObjectName("label_6")
         ###
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
