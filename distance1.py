@@ -2,12 +2,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def timeCheck(self):
-        if len(str(self.lineEdit))==0:
+        if (len(self.lineEdit.text())==0) and (len(self.lineEdit_2.text())==0) and (len(self.lineEdit_3.text())==0):
             print("podaj czas")
         else:
             if self.radioButton_6.isChecked():
-                t = str(self.lineEdit)
-                print(t)
+                h = self.lineEdit.text()
+                m = self.lineEdit_2.text()
+                s = self.lineEdit_3.text()
+                print(h,":",m,":",s)
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(405, 368)
@@ -51,6 +53,23 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(90, 40, 101, 31))
         self.label_2.setObjectName("label_2")
+        ###
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_2.setGeometry(QtCore.QRect(270, 110, 113, 20))
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_3.setGeometry(QtCore.QRect(270, 140, 113, 20))
+        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(230, 70, 31, 31))
+        self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(230, 100, 31, 31))
+        self.label_4.setObjectName("label_4")
+        self.label_5 = QtWidgets.QLabel(self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(230, 130, 31, 31))
+        self.label_5.setObjectName("label_5")
+        ###
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 405, 21))
@@ -72,9 +91,12 @@ class Ui_MainWindow(object):
         self.radioButton_4.setText(_translate("MainWindow", "21,097 km"))
         self.radioButton_5.setText(_translate("MainWindow", "42,195 km"))
         self.radioButton_6.setText(_translate("MainWindow", "1 km"))
-        self.label.setText(_translate("MainWindow", "Czas (w min):"))
+        self.label.setText(_translate("MainWindow", "Czas:"))
         self.pushButton.setText(_translate("MainWindow", "Przelicz"))
         self.label_2.setText(_translate("MainWindow", "Dystans:"))
+        self.label_3.setText(_translate("MainWindow", "Godziny:"))
+        self.label_4.setText(_translate("MainWindow", "Minuty:"))
+        self.label_5.setText(_translate("MainWindow", "Sekundy:"))
 
 
 if __name__ == "__main__":
