@@ -18,3 +18,6 @@ Program będzie działał tylko dla danych dystansów, ponieważ każdy z nich m
 Dystanse: 1000 m, 3000 m, 5000 m, 10 000 m, półmaraton, maraton 
 
 Biblioteki: Datatime, Numpy, PyQt5 (aplikacja okienkowa) 
+
+Raport II
+Zostało stworzone poglądowe okienko aplikacji i aktualnie pracuję nad algorytmem przeliczania czasu zależnie od dystansu (te wyświetlane w oknie zostaną już prawdopodobnie tymi końcowymi). Na dzień dzisiejszy, założenia projektu nie uległy zmianie.
